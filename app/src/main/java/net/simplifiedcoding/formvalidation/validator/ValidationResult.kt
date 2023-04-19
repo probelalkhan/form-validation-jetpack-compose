@@ -1,7 +1,9 @@
 package net.simplifiedcoding.formvalidation.validator
 
+import androidx.annotation.StringRes
+
 data class ValidationResult(
-    val errorMessage: String? = null
+    @StringRes val errorMessage: Int? = null
 ) {
     val isValid: Boolean
         get() = errorMessage == null

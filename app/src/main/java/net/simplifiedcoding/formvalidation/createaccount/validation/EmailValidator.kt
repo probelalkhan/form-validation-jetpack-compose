@@ -1,5 +1,6 @@
 package net.simplifiedcoding.formvalidation.createaccount.validation
 
+import net.simplifiedcoding.formvalidation.R
 import net.simplifiedcoding.formvalidation.validator.InputValidator
 import net.simplifiedcoding.formvalidation.validator.ValidationResult
 
@@ -9,9 +10,9 @@ class EmailValidator : InputValidator {
 
     override fun validate(input: String): ValidationResult {
         return if (input.isEmpty()) {
-            ValidationResult("Email cannot be empty")
+            ValidationResult(R.string.error_email_empty)
         } else if (!emailPattern.matches(input)) {
-            return ValidationResult("Email is not valid")
+            return ValidationResult(R.string.error_email_invalid)
         } else {
             ValidationResult()
         }

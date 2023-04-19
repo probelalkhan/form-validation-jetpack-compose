@@ -1,5 +1,6 @@
 package net.simplifiedcoding.formvalidation.ui.theme
 
+import androidx.annotation.StringRes
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -11,6 +12,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
@@ -25,7 +27,7 @@ fun AppTextField(
     isClickOnly: Boolean = false,
     onClick: () -> Unit = {},
     leadingIcon: ImageVector? = null,
-    error: String? = null
+    @StringRes error: Int? = null
 ) {
     Box(
         modifier = Modifier
@@ -50,7 +52,7 @@ fun AppTextField(
                 if (error != null) {
                     Text(
                         modifier = Modifier.fillMaxWidth(),
-                        text = error,
+                        text = stringResource(error),
                         color = MaterialTheme.colorScheme.error
                     )
                 }

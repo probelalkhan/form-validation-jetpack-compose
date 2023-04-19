@@ -1,17 +1,19 @@
 package net.simplifiedcoding.formvalidation.createaccount
 
+import androidx.annotation.StringRes
+
 data class CreateAccountState(
     val name: String = "",
-    val nameError: String? = null,
+    @StringRes val nameError: Int? = null,
 
     val email: String = "",
-    val emailError: String? = null,
+    @StringRes val emailError: Int? = null,
 
     val dateOfBirth: String = "",
-    val dateOfBirthError: String? = null,
+    @StringRes val dateOfBirthError: Int? = null,
 
     val password: String = "",
-    val passwordError: String? = null,
+    @StringRes val passwordError: Int? = null,
 
     val isCreateAccountEnabled: Boolean = false
 )
